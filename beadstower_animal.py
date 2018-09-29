@@ -16,6 +16,7 @@ class AnimalBeads(BB.MainWindow):
         self.extra_config()
 
     def draw_background(self):
+        self.extra_config()
         self.load_image()
         self.draw_pole()
         self.draw_beads()
