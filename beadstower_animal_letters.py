@@ -17,21 +17,26 @@ class AnimalLetters(BB.AnimalBeads):
         self.root.bind('<Key>', self.turn)
 
     def turn(self, event):
-        x0 = self.x0_pole - 25
+        x0 = self.x0_pole - self.image_w/2
         tag = ['all', 'user']
+        print(event.char, self.beads_solution)
+        if len(self.beads_solution) == 0:
+            return
         currentID = self.beads_solution[0]
         currentTags = self.canvas.gettags(currentID)
+        self.tryout += 1
+        self.canvas.itemconfigure(self.textID, text=self.trytext%(self.tryout))
         image = currentTags[2]
         currentLetter = self.imageID[currentTags[2]][1]
         if event.char == currentLetter:
             self.beads_user.append(self.canvas.create_image(x0, self.solY0, anchor=NW, image=self.imageID[image][0], tags=tag+[image]))
-            self.solY0 -= 50
+            self.solY0 -= self.image_w
             item = self.beads_solution.pop(0)
             self.beads_solution_done.append(item)
-        if len(self.beads_solution) == 0:
-            self.canvas.itemconfigure(self.textID, text='You Won!')
-            self.canvas.update()
-            self.root.after(3000, self.draw_game_extra)
+            if len(self.beads_solution) == 0:
+                self.canvas.itemconfigure(self.textID, text='You Won!')
+                self.canvas.update()
+                self.root.after(3000, self.draw_game_extra)
 
 if __name__ == '__main__':
     game = AnimalLetters()

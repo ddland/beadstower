@@ -39,7 +39,6 @@ class MainWindow():
         self.solY0 = self.h-self.yoffset
         self.solY1 = self.h-self.yoffset-self.beadsize
 
-
     def draw_background(self):
         self.draw_pole()
         self.draw_beads()
