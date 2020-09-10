@@ -83,6 +83,10 @@ KEY_MAPPING = {
                 5: uinput.KEY_F,     # values you can specify is defined in linux/input.h:
                 6: uinput.KEY_G, # http://www.cs.fsu.edu/~baker/devices/lxr/http/source/linux/include/linux/input.h?v=2.6.11.8
                 7: uinput.KEY_H, #
+                8: uinput.KEY_I, #
+                9: uinput.KEY_J, #
+                10: uinput.KEY_K, #
+                11: uinput.KEY_L, #
               }                      # Make sure a cap touch input is defined only
                                      # once or else the program will fail to run!
 

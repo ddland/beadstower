@@ -10,6 +10,7 @@ class AnimalBeads(BB.MainWindow):
     def extra_config(self):
         self.solY0 = self.h - self.yoffset - 50
         self.image_w = 50
+        self.Nbeads=5
 
     def draw_game_extra(self):
         self.draw_game()
@@ -24,7 +25,18 @@ class AnimalBeads(BB.MainWindow):
 
 
     def load_image(self):
-        self.images = ['Bear', 'Beaver', 'Fish', 'Insect'] # sorted a-z for keypress
+        self.images = ['Unicorn', 
+                'Bee',
+                'Elephant', 
+                'Fish', 
+                'Giraffe', 
+                'Whale',
+                'Dog',
+                'Duck',
+                'Frog',
+                'Grasshopper',
+                'Pig_With_Lipstick', 
+                'Seahorse'] # sorted a-z for keypress
         self.imageID = {}
         for item in self.images:
             IMID = PhotoImage(file='images/'+item+'.gif')
